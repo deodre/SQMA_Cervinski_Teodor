@@ -4,7 +4,6 @@ namespace BankAccountNS
 {
     /// <summary>
     /// Bank account demo class.
-    /// SQMA Project
     /// </summary>
     public class BankAccount
     {
