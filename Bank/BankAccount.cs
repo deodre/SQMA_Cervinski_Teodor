@@ -46,11 +46,13 @@ namespace BankAccountNS
             m_balance -= amount;
         }
 
+        public const string CreditAmountLessThanZeroMessage = "Credit amount is less than zero";
+
         public void Credit(double amount)
         {
             if (amount < 0)
             {
-                throw new ArgumentOutOfRangeException("amount");
+                throw new ArgumentOutOfRangeException("amount", amount, CreditAmountLessThanZeroMessage);
             }
 
             m_balance += amount;
