@@ -4,7 +4,7 @@ pipeline {
 		githubPush()
 	}
 	stages {
-		stages('Test') {
+		stage('Test') {
 			parallel {
 				stage('Credit Tests') {
 					steps {
