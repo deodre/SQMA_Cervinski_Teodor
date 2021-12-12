@@ -3,16 +3,18 @@ pipeline {
 	triggers {
 		githubPush()
 	}
-	stages('Test') {
-		parallel {
-			stage('Credit Tests') {
-				steps {
-					sh 'dotnet test --filter "FullyQualifiedName~CreditTests"'
+	stages {
+		stages('Test') {
+			parallel {
+				stage('Credit Tests') {
+					steps {
+						sh 'dotnet test --filter "FullyQualifiedName~CreditTests"'
+					}
 				}
-			}
-			stage('Debit Tests') {
-				steps {
-					sh 'dotnet test --filter "FullyQualifiedName~DebitTests"'
+				stage('Debit Tests') {
+					steps {
+						sh 'dotnet test --filter "FullyQualifiedName~DebitTests"'
+					}
 				}
 			}
 		}
